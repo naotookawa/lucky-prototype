@@ -1,6 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
+import pandas as pd
+from sqlalchemy import create_engine
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='my-react-app/build/static', template_folder='templates')
 
 @app.route('/')
 def index():
@@ -13,3 +15,4 @@ def print_lucky():
 # おまじない
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port = 5000, debug = True)
+
