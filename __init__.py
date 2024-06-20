@@ -8,6 +8,10 @@ app = Flask(__name__, static_folder='my-react-app/build/static', template_folder
 def index():
     return render_template('index.html')
 
+@app.route('/new-group')
+def index():
+    return render_template('new_group.html')
+
 @app.route('/test')
 def print_lucky():
     return 'lucky'
@@ -15,5 +19,3 @@ def print_lucky():
 # おまじない
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port = 5000, debug = True)
-
-# これはローカルのPCで書きました
